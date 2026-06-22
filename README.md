@@ -97,12 +97,12 @@ Concentra la insatisfacción a nivel de producto: volumen e incidencia de review
 ### 2. Intents y escala humana
 Diagnostica el desempeño del bot cruzando canal, intent y tipo de resolución con la tasa de escalado a humano y el tiempo de sesión. Da soporte al **Hallazgo 2**: `onboarding_dudas`, `consulta_tasa` y `reclamo_cobro` son los intents que más escalan (≈29–33 %), señalando los flujos a rediseñar.
 
-![Dashboard — Intents y escala humana](reports/figures/dashboard_02.png)
+![Dashboard — Intents y escala humana](reports/figures/dashboard_03.png)
 
 ### 3. Evolución de satisfacción
 Sigue **Rating, CSAT y NPS** mes a mes contra el mismo período del año anterior (YoY), con tarjetas ancladas al último mes con datos y tablas por canal de adquisición y categoría. Hace visible el **Hallazgo 1** (la brecha persistente entre CSAT y rating) y respalda el **Hallazgo 4** (diferencias por canal que el promedio simple oculta).
 
-![Dashboard — Evolución de satisfacción](reports/figures/dashboard_03.png)
+![Dashboard — Evolución de satisfacción](reports/figures/dashboard_02.png)
 
 
 ---
