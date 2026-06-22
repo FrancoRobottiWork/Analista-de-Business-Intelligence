@@ -30,13 +30,13 @@ Sobre estos hallazgos se propone una **campaña de retención dirigida** y la **
 ├── data
 │   ├── raw/            # Datos originales (Excel): clientes, productos, reviews_stores, bot_chats
 │   └── clean/          # Tablas auditadas y con flags de trazabilidad (salida del notebook 01)
-├── docs/               # Documentación de respaldo (uso de IA, dashboard) — en progreso
+├── docs/               # Documentación (uso de IA, dashboards Power BI)
 ├── notebooks
 │   ├── 00_analisis_exploratorio.ipynb   # EDA: distribuciones, cobertura temporal, granularidad
 │   ├── 01_calidad_datos.ipynb           # Auditoría de calidad y dataset limpio
 │   ├── 02_sql_analitico.ipynb           # Consultas de negocio (SQL sobre DataFrames con DuckDB)
 │   └── 03_insights_accionables.ipynb    # Insights destilados + acciones
-├── reports/figures/    # Gráficos exportados por los notebooks
+├── reports/figures/    # Gráficos de los notebooks + export de las 3 páginas del dashboard
 ├── requirements.txt
 └── README.md
 ```
@@ -84,6 +84,29 @@ Destila el análisis en cuatro insights, cada uno con su evidencia validada y su
 | 4 | El promedio por canal engaña | Doble insatisfacción: Orgánico 12.5%, Paid Social 10.7% (~160 clientes) | Campaña de retención dirigida |
 
 ---
+
+## Dashboard interactivo (Power BI)
+
+Los hallazgos se materializan en un dashboard de tres páginas que permite explorar los datos de forma interactiva, con filtros compartidos por **producto, rating, comentario, intent, store y período**.
+
+### 1. Reviews por producto
+Concentra la insatisfacción a nivel de producto: volumen e incidencia de reviews negativas por producto y categoría, motivos más frecuentes (treemap de comentarios) y tasa de respuesta. Da soporte al **Hallazgo 3**: `BNPL Cuotas 3x` y `Préstamo Personal Express` son los productos con mayor proporción de reviews negativas.
+
+![Dashboard — Reviews por producto](reports/figures/dashboard_01.png)
+
+### 2. Intents y escala humana
+Diagnostica el desempeño del bot cruzando canal, intent y tipo de resolución con la tasa de escalado a humano y el tiempo de sesión. Da soporte al **Hallazgo 2**: `onboarding_dudas`, `consulta_tasa` y `reclamo_cobro` son los intents que más escalan (≈29–33 %), señalando los flujos a rediseñar.
+
+![Dashboard — Intents y escala humana](reports/figures/dashboard_02.png)
+
+### 3. Evolución de satisfacción
+Sigue **Rating, CSAT y NPS** mes a mes contra el mismo período del año anterior (YoY), con tarjetas ancladas al último mes con datos y tablas por canal de adquisición y categoría. Hace visible el **Hallazgo 1** (la brecha persistente entre CSAT y rating) y respalda el **Hallazgo 4** (diferencias por canal que el promedio simple oculta).
+
+![Dashboard — Evolución de satisfacción](reports/figures/dashboard_03.png)
+
+
+---
+
 
 ## Limitaciones de calidad de los datos
 
